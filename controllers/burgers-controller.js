@@ -6,7 +6,6 @@ let db = require("../models");
 router.get("/", function (req, res) {
   db.Burger.findAll().then(function (data) {
     res.json(data);
-    res.end();
   });
 });
 
@@ -14,7 +13,6 @@ router.get("/", function (req, res) {
 router.post("/", function (req, res) {
   db.Burger.create(req.body).then(function (data) {
     res.json(data);
-    res.end();
   });
 });
 
@@ -32,7 +30,6 @@ router.put("/", function (req, res) {
        }
      }).then(function(data) {
        res.json(data);
-       res.end();
      });
 });
 
@@ -44,7 +41,6 @@ router.delete("/:id", function (req, res) {
     }
   }).then(function (data) {
     res.json(data);
-    res.end();
   });
 });
 

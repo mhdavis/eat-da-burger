@@ -4,7 +4,8 @@
   "description": "a burger checklist application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node \"db/seeds.js\""
   },
   "repository": {
     "type": "git",
