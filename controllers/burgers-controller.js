@@ -4,9 +4,9 @@ let db = require("../models");
 
 // GET route for all of the posts
 router.get("/", function (req, res) {
-  db.Burger.findAll().then(function (data) {
-    res.json(data);
-  });
+  // db.Burger.findAll().then(function (data) {
+  // });
+  res.render("index");
 });
 
 // POST route for saving a new burger

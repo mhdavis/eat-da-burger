@@ -1,7 +1,13 @@
 .to-eat-list {
   border: 1px solid orange;
+  min-height: 200px;
 }
 
 .eaten-list {
   border: 1px solid red;
+  min-height: 200px;
+}
+
+.burger-form {
+  margin: 1em 0;
 }
