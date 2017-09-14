@@ -1,9 +1,15 @@
+body {
+  background-color: orange;
+}
+
 .to-eat-list {
-  border: 1px solid orange;
+  background-color: white;
+  border: 1px solid blue;
   min-height: 200px;
 }
 
 .eaten-list {
+  background-color: white;
   border: 1px solid red;
   min-height: 200px;
 }

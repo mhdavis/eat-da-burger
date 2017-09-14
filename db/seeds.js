@@ -1,5 +1,5 @@
-const Sequelize = request("sequelize");
-const Burger = request("../models/burger.js");
+const Sequelize = require("sequelize");
+const Burger = require("../models/burger.js");
 
 const sequelize = new Sequelize("burgers_db", "root", "rootlightening95", {
   host: "localhost",
