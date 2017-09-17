@@ -1,51 +1,58 @@
-$(document).ready(function() {
+// POST
+$(document).on("click", "#burger-submit", function (event) {
+
+  event.preventDefault();
+
+  let newBurger = {
+    name: $("#burger-input").val(),
+    devoured: false
+  };
+
+  $("#burger-input").val('');
 
   $.ajax({
-    method: "GET",
-    url: "/api/burgers/"
-  }).done(function(result) {
-    for (let i=0; i < result.length; i++) {
-
-      let $burgerBox = createBurgerBox(results[i]);
-      if (result[i].devoured) {
-        $(".eaten-list").append($burgerBox);
-      } else {
-        $(".to-eat-list").append($burgerBox);
-      }
+    method: "POST",
+    url: "/",
+    dataType: "json",
+    data: newBurger,
+    success: function (data) {
+        window.location.reload();
     }
   });
-
-  $(document).on("click", "#burger-submit", function (event) {
-    event.preventDefault();
-    let $burgerInput = $("#burger-input").val();
-    $.post("/api/burgers/", $burgerInput);
-  });
-
-  $(document).on("click", ".burger-devour", function (event) {
-      event.preventDefault();
-      $.put("/api/burgers/");
-  });
-
-  $(document).on("click", ".burger-delete", function (event) {
-    event.preventDefault();
-    let burgerId = event.target.id
-  });
-
 });
 
-function createBurgerBox(burger) {
-  let $div = $("<div>").addClass("burger-box");
-  let $burgerTag = $("<p>").val(burger.id + ".) " + burger.name);
-  let $deleteButton = $("<button>").addClass("delete-btn").val("X");
+// PUT
+$(document).on("click", ".burger-devour", function (event) {
+    event.preventDefault();
+    $.put("/");
+});
 
-  $div.append($burgerTag);
-  $div.append($deleteButton);
-  
+$(document).on("click", ".burger-delete", function (event) {
+  event.preventDefault();
+  let burgerId = event.target.id
+});
+
+// HELPER FUNCTIONS
+function createBurgerBox(burger) {
+  let $burgerBox = $("<div>").addClass("burger-box");
+  let $burgerTag = $("<p>").val(burger.id + ".) " + burger.name);
+  let $deleteButton = $("<button>").addClass("delete-btn").text("X");
+
+  $burgerBox.append($burgerTag);
+  $burgerBox.append($deleteButton);
+
+  // if burger is not devoured, give it a devour button
   if (!burger.devoured) {
     let $devourButton = $("<button>")
     .addClass("devour-btn")
-    .val("Devour!");
-    $div.append($devourButton);
+    .text("Devour!");
+    $burgerBox.append($devourButton);
   }
 
+  // append burgerbox to appropriate receptical
+  if (burger.devoured) {
+    $(".eaten-list").append($burgerBox);
+  } else {
+    $(".to-eat-list").append($burgerBox);
+  }
 }

@@ -4,21 +4,31 @@ const router = express.Router();
 
 // GET route for all of the posts
 router.get("/", function (req, res) {
-  db.Burger.findAll().then(function (data) {
-    console.log(data);
-    res.render("index", data);
+
+  db.Burger.findAll().then(function (resp) {
+    let burgerArr = [];
+    for (let i=0; i < resp.length; i++) {
+      burgerArr.push(resp[i].dataValues);
+    }
+
+    let burgerObj = {};
+    burgerObj.burgers = burgerArr;
+
+    console.log(burgerObj);
+
+    res.render("index", burgerObj);
   });
 });
 
 // POST route for saving a new burger
-router.post("/api/burgers/", function (req, res) {
+router.post("/", function (req, res) {
   db.Burger.create(req.body).then(function (data) {
-    res.render("index");
+    res.redirect("/");
   });
 });
 
 // PUT route for updating a burger's devoured status
-router.put("/api/burgers/", function (req, res) {
+router.put("/", function (req, res) {
   let burger = {
     name: req.body.name,
     devoured: !req.body.devoured
@@ -35,7 +45,7 @@ router.put("/api/burgers/", function (req, res) {
 });
 
 // DELETE route for deleting burger
-router.delete("/api/burgers/:id", function (req, res) {
+router.delete("/", function (req, res) {
   db.Burger.destroy({
     where: {
       id: req.params.id

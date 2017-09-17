@@ -4,11 +4,30 @@
 
   <div class="row">
     <div class="col-6">
-      <div class="to-eat-list"></div>
+      <div class="to-eat-list">
+        {{#burgers}}
+          {{#unless devoured}}
+            <div class="burger-box">
+              <p>{{id}}.) {{name}}</p>
+              <button class="btn btn-sm devour-btn">Devour</button>
+              <button class="btn btn-sm delete-btn">X</button>
+            </div>
+          {{/unless}}
+        {{/burgers}}
+      </div>
     </div>
 
     <div class="col-6">
-      <div class="eaten-list"></div>
+      <div class="eaten-list">
+        {{#burgers}}
+          {{#if devoured}}
+            <div class="burger-box">
+              <p>{{id}}.) {{name}}</p>
+              <button class="btn btn-sm delete-btn">X</button>
+            </div>
+          {{/if}}
+        {{/burgers}}
+      </div>
     </div>
   </div>
 
