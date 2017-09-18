@@ -7,8 +7,10 @@
       <div class="to-eat-list">
         {{#burgers}}
           {{#unless devoured}}
-            <div class="burger-box">
-              <p>{{id}}.) {{name}}</p>
+            <div id="{{id}}" class="burger-box">
+              <p>
+                <span class="burger-id">{{id}}</span>.) <span class="burger-name">{{name}}</span>
+              </p>
               <button class="btn btn-sm devour-btn">Devour</button>
               <button class="btn btn-sm delete-btn">X</button>
             </div>
@@ -21,8 +23,10 @@
       <div class="eaten-list">
         {{#burgers}}
           {{#if devoured}}
-            <div class="burger-box">
-              <p>{{id}}.) {{name}}</p>
+            <div id="{{id}}" class="burger-box">
+              <p>
+                <span class="burger-id">{{id}}</span>.) <span class="burger-name">{{name}}</span>
+              </p>
               <button class="btn btn-sm delete-btn">X</button>
             </div>
           {{/if}}

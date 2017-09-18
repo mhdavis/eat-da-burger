@@ -22,37 +22,30 @@ $(document).on("click", "#burger-submit", function (event) {
 });
 
 // PUT
-$(document).on("click", ".burger-devour", function (event) {
+$(document).on("click", ".devour-btn", function (event) {
     event.preventDefault();
-    $.put("/");
+    let devouredId = $(this)
+    .parent()
+    .get(0)
+    .id;
+
+    let devouredBurger = {
+      id: devouredId,
+      devoured: true
+    };
+
+    $.ajax({
+      method: "PUT",
+      url: "/",
+      dataType: "json",
+      data: devouredBurger,
+      success: function (data) {
+          window.location.reload();
+      }
+    });
 });
 
-$(document).on("click", ".burger-delete", function (event) {
+// DELETE
+$(document).on("click", ".delete-btn", function (event) {
   event.preventDefault();
-  let burgerId = event.target.id
 });
-
-// HELPER FUNCTIONS
-function createBurgerBox(burger) {
-  let $burgerBox = $("<div>").addClass("burger-box");
-  let $burgerTag = $("<p>").val(burger.id + ".) " + burger.name);
-  let $deleteButton = $("<button>").addClass("delete-btn").text("X");
-
-  $burgerBox.append($burgerTag);
-  $burgerBox.append($deleteButton);
-
-  // if burger is not devoured, give it a devour button
-  if (!burger.devoured) {
-    let $devourButton = $("<button>")
-    .addClass("devour-btn")
-    .text("Devour!");
-    $burgerBox.append($devourButton);
-  }
-
-  // append burgerbox to appropriate receptical
-  if (burger.devoured) {
-    $(".eaten-list").append($burgerBox);
-  } else {
-    $(".to-eat-list").append($burgerBox);
-  }
-}

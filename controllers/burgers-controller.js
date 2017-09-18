@@ -30,17 +30,17 @@ router.post("/", function (req, res) {
 // PUT route for updating a burger's devoured status
 router.put("/", function (req, res) {
   let burger = {
-    name: req.body.name,
-    devoured: !req.body.devoured
+    devoured: req.body.devoured
   }
 
+  console.log(req.body);
   db.Burger.update(burger,
      {
        where: {
          id: req.body.id
        }
      }).then(function(data) {
-       res.render("index");
+       res.redirect("/");
      });
 });
 
