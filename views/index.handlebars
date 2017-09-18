@@ -1,9 +1,14 @@
-<h1 class="text-center">Eat Da Burger</h1>
-
 <div class="container">
+  <h1 class="text-center">Eat Da Burger</h1>
+  <div class="text-center">
+    <img id="burger-img" src="/img/burger.jpg" alt="a picture of a burger and fries">
+  </div>
 
   <div class="row">
     <div class="col-6">
+      <div class="text-center">
+        <h3>To Devour</h3>
+      </div>
       <div class="to-eat-list">
         {{#burgers}}
           {{#unless devoured}}
@@ -20,6 +25,9 @@
     </div>
 
     <div class="col-6">
+      <div class="text-center">
+        <h3>Devoured</h3>
+      </div>
       <div class="eaten-list">
         {{#burgers}}
           {{#if devoured}}
@@ -39,7 +47,7 @@
     <div class="col-12 text-center">
       <form class="burger-form">
         <input id="burger-input" type="text" name="burger-text">
-        <input id="burger-submit" type="submit" name="submit">
+        <input id="burger-submit" class="btn" type="submit" name="submit">
       </form>
     </div>
   </div>

@@ -1,19 +1,93 @@
+/*
+font-family: 'Quicksand', sans-serif;
+font-family: 'Permanent Marker', cursive;
+*/
+
 body {
-  background-color: orange;
+  background-color: #ffbe47;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h3 {
+  font-family: 'Permanent Marker', cursive;
 }
 
 .to-eat-list {
-  background-color: white;
-  border: 1px solid blue;
+  border: 2px solid white;
+  border-radius: 10px;
   min-height: 200px;
+  padding: 1em;
 }
 
 .eaten-list {
-  background-color: white;
-  border: 1px solid red;
+  border: 2px solid white;
+  border-radius:10px;
   min-height: 200px;
 }
 
 .burger-form {
   margin: 1em 0;
+}
+
+#burger-img {
+  width: 40%;
+  margin: 0.5em;
+  border-radius: 20px;
+}
+
+.burger-box {
+  border-radius: 10px;
+  color: white;
+  background-color: #374974;
+  max-width: 300px;
+  margin: 0.5em auto;
+}
+
+.burger-box > p {
+  margin: 0;
+  padding: 0.5em;
+  width: 75%;
+}
+
+#burger-submit {
+  color: white;
+  background-color: #374974;
+  border: 2px solid white;
+  border-radius: 0px 10px 10px 0px;
+  font-family: 'Permanent Marker', cursive;
+  transition: 0.5s;
+}
+#burger-submit:hover {
+  background-color: #1f2840;
+}
+
+#burger-input {
+  border-radius: 10px 0px 0px 10px;
+  height: 100%;
+}
+
+.devour-btn {
+  margin: 0.5em;
+  border: 2px solid white;
+  color: black;
+  background-color: #ffbe47;
+  font-family: 'Permanent Marker', cursive;
+  transition: 0.5s;
+}
+.devour-btn:hover {
+  background-color: #d1921d;
+  color: white;
+}
+
+.delete-btn {
+  margin: 0.5em;
+  color: white;
+  background-color: #d23535;
+  border: 2px solid white;
+  font-family: 'Permanent Marker', cursive;
+  transition: 0.5s;
+}
+.delete-btn:hover {
+  background-color: #912020;
+  color: black;
 }

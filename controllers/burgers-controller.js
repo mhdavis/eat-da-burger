@@ -34,7 +34,8 @@ router.put("/", function (req, res) {
   db.Burger.update(burger,
      {
        where: {
-         id: req.body.id
+         id: req.body.id,
+         name: req.body.name
        }
      }).then(function(data) {
        res.redirect("/");
@@ -45,7 +46,8 @@ router.put("/", function (req, res) {
 router.delete("/", function (req, res) {
   db.Burger.destroy({
     where: {
-      id: req.body.id
+      id: req.body.id,
+      name: req.body.name
     }
   }).then(function (data) {
     res.render("index");
