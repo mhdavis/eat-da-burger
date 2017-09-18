@@ -48,4 +48,22 @@ $(document).on("click", ".devour-btn", function (event) {
 // DELETE
 $(document).on("click", ".delete-btn", function (event) {
   event.preventDefault();
+  let deleteId = $(this)
+  .parent()
+  .get(0)
+  .id;
+
+  let deletedBurger = {
+    id: deleteId
+  };
+
+  $.ajax({
+    method: "DELETE",
+    url: "/",
+    dataType: "json",
+    data: deletedBurger,
+    success: function (data) {
+        window.location.reload();
+    }
+  });
 });

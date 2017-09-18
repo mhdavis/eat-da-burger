@@ -14,8 +14,6 @@ router.get("/", function (req, res) {
     let burgerObj = {};
     burgerObj.burgers = burgerArr;
 
-    console.log(burgerObj);
-
     res.render("index", burgerObj);
   });
 });
@@ -33,7 +31,6 @@ router.put("/", function (req, res) {
     devoured: req.body.devoured
   }
 
-  console.log(req.body);
   db.Burger.update(burger,
      {
        where: {
@@ -48,7 +45,7 @@ router.put("/", function (req, res) {
 router.delete("/", function (req, res) {
   db.Burger.destroy({
     where: {
-      id: req.params.id
+      id: req.body.id
     }
   }).then(function (data) {
     res.render("index");
