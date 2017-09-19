@@ -13,6 +13,12 @@ h3 {
   -webkit-text-stroke: 1px white;
 }
 
+footer {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-family: 'Permanent Marker', cursive;
+}
+
 /* BURGER PAGE TITLE
 ===================================================== */
 #burger-title {
