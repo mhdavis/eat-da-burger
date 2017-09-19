@@ -1,15 +1,16 @@
-<div class="container">
-  <h1 class="text-center">Eat Da Burger</h1>
-  <div class="text-center">
-    <img id="burger-img" src="/img/burger.jpg" alt="a picture of a burger and fries">
-  </div>
+<div class="burger-jumbo jumbotron jumbotron-fluid">
+  <h1 id="burger-title" class="display-3">Eat Da Burger</h1>
+</div>
 
+<div class="container">
   <div class="row">
     <div class="col-6">
       <div class="text-center">
         <h3>To Devour</h3>
+        <div class="burger-top-bun mx-auto"></div>
+        <div class="burger-cheese mx-auto"></div>
       </div>
-      <div class="to-eat-list">
+      <div class="to-eat-list mx-auto">
         {{#burgers}}
           {{#unless devoured}}
             <div id="{{id}}" class="burger-box">
@@ -22,13 +23,20 @@
           {{/unless}}
         {{/burgers}}
       </div>
+      <div class="text-center">
+        <div class="burger-lettuce mx-auto"></div>
+        <div class="burger-tomato mx-auto"></div>
+        <div class="burger-bottom-bun mx-auto"></div>
+      </div>
     </div>
 
     <div class="col-6">
       <div class="text-center">
         <h3>Devoured</h3>
+        <div class="burger-top-bun mx-auto"></div>
+        <div class="burger-cheese mx-auto"></div>
       </div>
-      <div class="eaten-list">
+      <div class="eaten-list mx-auto">
         {{#burgers}}
           {{#if devoured}}
             <div id="{{id}}" class="burger-box">
@@ -39,6 +47,11 @@
             </div>
           {{/if}}
         {{/burgers}}
+      </div>
+      <div class="text-center">
+        <div class="burger-lettuce mx-auto"></div>
+        <div class="burger-tomato mx-auto"></div>
+        <div class="burger-bottom-bun mx-auto"></div>
       </div>
     </div>
   </div>
