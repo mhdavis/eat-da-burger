@@ -21,7 +21,7 @@ router.get("/", function (req, res) {
 // POST route for saving a new burger
 router.post("/", function (req, res) {
   db.Burger.create(req.body).then(function (data) {
-    res.redirect("/");
+    res.json(data);
   });
 });
 
@@ -38,7 +38,7 @@ router.put("/", function (req, res) {
          name: req.body.name
        }
      }).then(function(data) {
-       res.redirect("/");
+       res.json(data);
      });
 });
 
@@ -50,7 +50,7 @@ router.delete("/", function (req, res) {
       name: req.body.name
     }
   }).then(function (data) {
-    res.render("index");
+    res.json(data);
   });
 });
 
