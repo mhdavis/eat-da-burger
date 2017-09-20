@@ -12,7 +12,7 @@ Eat-Da-Burger is a simple application that allows users to add burger entries an
 - Frontend - [Handlebars.js](http://handlebarsjs.com/ "Handlebars Docs") / [JQuery](https://jquery.com/ "JQuery Docs")
 - Routing - [Express.js](https://expressjs.com/ "Express Docs")
 - Backend / Server - [Node.js](https://nodejs.org/en/ "Node Docs")
-- Database - [MySQL](https://www.mysql.com/, "MySQL Docs") / [Sequelize ORM](http://docs.sequelizejs.com/, "Sequelize Docs")
+- Database - [MySQL](https://www.mysql.com/ "MySQL Docs") / [Sequelize ORM](http://docs.sequelizejs.com/, "Sequelize Docs")
 
 ## Learning Objectives
 
