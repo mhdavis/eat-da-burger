@@ -2,7 +2,7 @@
 
 ## Website
 
-[This is the link to the launched application](# 'coming soon')
+[This is the link to the launched application](https://mhdeatdaburger.herokuapp.com/ 'Eat Da Burger Application')
 
 ## Introduction
 
@@ -21,3 +21,4 @@ Eat-Da-Burger is a simple application that allows users to add burger entries an
 - Study associations between `GET`, `POST`, `PUT`, `DELETE` methods via frontend AJAX requests and their corresponding *Sequelize* `findAll`, `create`, `update` and `destroy` in backend handling.
 - Gain comfort with `sequelize-cli` npm package in order to initialize `/models` and `/config` folders and improve workflow.
 - Develop MVC structured application
+- Practiced deploying application to *Heroku* and establishing remote JAWS DB
